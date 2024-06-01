@@ -79,9 +79,11 @@ We are using open-source large language models (LLMs), embeddings, and vector st
 
 1. Currently, there is no option to upload PDFs. Please put the PDF files in the `./src/data` directory. The code will read files from there. (For now, I have kept a Data Structures and Algorithms book there, `DataStructures.pdf`). If you're changing anything in `./src/data`, delete the previous `vectorstore.pkl` file so that it will delete the previously stored data and store the new data (if not deleted, it will think the data is unchanged).
 2. Enter your question or query in the chat input field. (It will take some time, approximately 2-3 minutes, to generate the results, depending on the specifications (GPU) of your machine and the query, as we are using it completely offline).
-3. There is a checkbox to choose whether you want to use vector embeddings (loaded data/PDFs) for context-aware responses or get direct responses from the large language model.
+3. There is a checkbox to choose whether you want to use vector embeddings (loaded data/PDFs) for context-aware responses or get direct responses from the large language model. Even if it is checked out it has the context of previous chats. It Just switches it from RAG to LLM and LLM to RAG. To delete Chat context Read point 6.
 4. Click the "Submit" button or press Enter to send your query.
 5. The application will process your query and display the response in the chat window.
+6. If the context of chat has Become Non relevant then Delete the `chat_history.pkl` file. and Start the conversation.
+   
 
 ## Further Work
 
