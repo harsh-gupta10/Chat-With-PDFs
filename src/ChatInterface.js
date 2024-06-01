@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import io from 'socket.io-client';
-import ReactMarkdown from 'react-markdown';
+// import ReactMarkdown from 'react-markdown';
 import './ChatInterface.css';
 import MarkdownRenderer from './MarkdownRenderer';
 import { CopyBlock, dracula } from 'react-code-blocks';

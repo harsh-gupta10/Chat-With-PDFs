@@ -27,8 +27,6 @@ def get_data_dir_hash(directory):
     return hash(tuple(sorted(file_hashes)))
 
 
-# data_dir_hash_current = get_data_dir_hash("./data/")
-# data_dir_hash = None
 
 
 try:
@@ -56,40 +54,6 @@ except FileNotFoundError:
     print("Stored Vectors ......")
     with open(VECTORSTORE_FILE, "wb") as f:
         pickle.dump(vectorstore, f)
-    # with open(DATA_DIR_HASH_FILE, "wb") as f:
-    #     pickle.dump(data_dir_hash_current, f)
-    # data_dir_hash = data_dir_hash_current
-
-    # vectorstore.metadata["data_dir_hash"] = data_dir_hash
-
-# try:
-#     with open(DATA_DIR_HASH_FILE, "rb") as f:
-#         data_dir_hash = pickle.load(f)
-#         print("Loaded data directory hash from file.")
-# except FileNotFoundError:
-#     print("Data directory hash file not found.")
-#     data_dir_hash = None
-    
-
-# if data_dir_hash_current != data_dir_hash:
-#     print("Data directory has changed. Recreating the vectorstore.")
-#     loader = PyPDFDirectoryLoader("./data/")
-#     docs_before_split = loader.load_and_split()
-#     text_splitter = RecursiveCharacterTextSplitter(
-#         chunk_size=700,
-#         chunk_overlap=50,
-#     )
-#     docs_after_split = text_splitter.split_documents(docs_before_split)
-#     huggingface_embeddings = HuggingFaceBgeEmbeddings(
-#         model_name="BAAI/bge-small-en-v1.5",
-#         model_kwargs={'device': 'cpu'},
-#         encode_kwargs={'normalize_embeddings': True}
-#     )
-#     vectorstore = FAISS.from_documents(docs_after_split, huggingface_embeddings)
-#     with open(VECTORSTORE_FILE, "wb") as f:
-#         pickle.dump(vectorstore, f)
-#     with open(DATA_DIR_HASH_FILE, "wb") as f:
-#         pickle.dump(data_dir_hash_current, f)
 
 
 template = """
