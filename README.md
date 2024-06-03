@@ -2,6 +2,10 @@
 
 This project is a web application that allows users to have natural language conversations with the information contained in PDF files. It combines the power of large language models and vector embeddings to provide relevant and contextual responses based on the user's queries. We use the RAG (Retrieval Augmented Generation) approach.
 
+### Video 
+- `https://youtu.be/XVhzfRZR4Bk`
+- `https://youtu.be/CjSZNBxswZE`
+
 ## Problem Statement
 
 Accessing and understanding information from large PDF documents can be a time-consuming and tedious task. This project aims to solve this problem by providing a conversational interface where users can ask questions related to the content of the PDF files, and the application will provide relevant and contextual responses based on the information contained in the documents.
